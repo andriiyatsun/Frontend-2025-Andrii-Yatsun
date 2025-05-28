@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма додавання викладачів</title>
+</head>
+
+<body>
+  <h1> Форма додавання викладача </h1>  
+  <form>
+    <!-- Поле для повного імені -->
+    <label for="fullName"><b>Повне ім'я:</b></label>
+    <input type="text" id="fullName" name="fullName" required>
+    <br><br>
+    
+    <!-- Cтать -->
+    <label>Стать:</label>
+
+    <input type="radio" id="gender_male" name="gender" value="Чоловіча" required>
+    <label for="gender_male">Чоловіча</label>
+    <input type="radio" id="gender_female" name="gender" value="Жіноча" required>
+    <label for="gender_female">Жіноча</label><br>
+    <br><br>
+    
+
+    <!-- Дата народження -->
+    <label for="dob">Дата народження</label>
+    <input type="date" id="dob" name="dob" required>
+    <br><br>
+
+
+    <!-- email -->
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <!-- Телефон -->
+    <label for="cell">Номер телефону</label>
+    <input type="tel" id="cell" name="cell" required>
+    <br><br>
+
+    <!-- Бажаний колір фону -->
+    <label for="bgColor">Бажаний колір</label>
+    <input type="color" id="bgColor" name="bgColor" value="#ffffff">
+    <br><br>
+
+    <!-- Країна -->
+    <label for="country">Країна</label>
+    <select id="country" name="country" required>
+      <option value="" disabled selected>Оберіть країну</option>
+      <option  value="Ukraine">Ukraine</option>
+      <option  value="Poland">Poland</option>
+      <option  value="Spain">Spain</option>
+      <option  value="Germany">Germany</option>
+      <option  value="USA">USA</option>
+      <option  value="Mexico">Mexico</option>
+    </select><br><br>
+
+    <!-- Місто -->
+    <label for="city">Місто</label>
+    <input type="text" id="city" name="city" required>
+    <br><br>
+
+    <!-- Коментар -->
+    <label for="message">Коментар</label>
+    <textarea id="message" name="comment" rows="4" cols="50" required></textarea>
+    <br><br>
+
+    <button><strong>Submit</strong></button>
+  </form>
+</body>
+</html>
