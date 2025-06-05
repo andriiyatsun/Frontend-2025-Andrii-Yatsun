@@ -1,0 +1,147 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.amount {
+    background-color: #ffeb3b;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #673ab7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: normal;
+    color: #4caf50;
+}
+
+.status:not(.purchased) {
+    color: #f44336;
+}
+
+.tooltip {
+    display: none;
+    background-color: #673ab7;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.btn:hover .tooltip {
+    display: block;
+    opacity: 1;
+}
+
+/* Стилі для бейджу */
+#badge {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #673ab7;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+#badge:hover {
+    transform: translateY(-30px);
+}
+
+#badge:hover .badge-text {
+    display: block;
+}
+
+.badge-text {
+    display: none;
+    font-size: 14px;
+    color: white;
+}
+
+/* Анімація для тултіпу */
+.btn[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #673ab7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    opacity: 0;
+    animation: tooltip 0.5s forwards;
+}
+
+@keyframes tooltip {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Респонсив дизайн */
+@media (max-width: 650px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-item {
+        margin-bottom: 10px;
+    }
+
+    .amount {
+        margin-top: 5px;
+    }
+}
